@@ -69,7 +69,7 @@ First, let's load an image that we'll convert to a blue noise stippling pattern.
 
 ```{r}
 #| label: load-image-r
-#| echo: true
+#| echo: false
 #| fig-cap: "Original image before stippling"
 
 library(imager)
@@ -108,7 +108,7 @@ Before applying the stippling algorithm, we create an **importance map** that id
 
 ```{r}
 #| label: importance-map-r
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 
@@ -184,7 +184,7 @@ The stippling algorithm uses a modified void-and-cluster approach that:
 
 ```{r}
 #| label: stippling-functions-r
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 
@@ -334,7 +334,7 @@ Before generating the stippling pattern, we prepare the image by resizing if nec
 
 ```{r}
 #| label: prep-image-r
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 
@@ -377,7 +377,7 @@ Now let's apply the stippling algorithm to create the blue noise stippling patte
 
 ```{r}
 #| label: generate-stipple-r
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 
@@ -411,7 +411,7 @@ Let's visualize the original image, the importance map, and the stippled version
 
 ```{r}
 #| label: display-results-r
-#| echo: true
+#| echo: false
 #| fig-cap: "Comparison of original image, importance map, and blue noise stippling"
 #| fig-width: 7
 #| fig-height: 4
@@ -442,7 +442,7 @@ This section creates a GIF showing how the stippled image looks as more points a
 
 ```{r}
 #| label: progressive-stippling-r
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 
