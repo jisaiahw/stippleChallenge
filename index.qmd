@@ -63,10 +63,6 @@ The method uses a modified "void and cluster" algorithm that combines importance
 
 First, let's load an image that we'll convert to a blue noise stippling pattern. You can use any image you'd like, but we'll demonstrate with the provided example.
 
-::: {.panel-tabset}
-
-### R
-
 ```{r}
 #| label: load-image-r
 #| echo: false
@@ -91,8 +87,6 @@ plot(original_img, axes = FALSE, main = "Original Image")
 cat("Image dimensions:", dim(original_img)[1], "x", dim(original_img)[2], "pixels\n")
 ```
 
-:::
-
 ## Importance Mapping
 
 Before applying the stippling algorithm, we create an **importance map** that identifies which regions of the image should receive more stipples. The importance map is computed by:
@@ -101,10 +95,6 @@ Before applying the stippling algorithm, we create an **importance map** that id
 - **Extreme tone downweighting**: Smooth Gaussian functions downweight tones below 0.2 (very dark) and above 0.8 (very light), creating a gradual transition that preserves mid-tones
 - **Mid-tone boost**: A smooth Gaussian function centered on mid-tones provides a gradual increase in importance for mid-tone regions, ensuring they receive appropriate stippling density
 - **Selective and effective**: This approach ensures that stipples are distributed appropriately (more dots in dark areas and mid-tones, fewer in extreme dark/light areas) while maintaining good spatial distribution
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: importance-map-r
@@ -165,8 +155,6 @@ compute_importance <- function(gray_img,
 }
 ```
 
-:::
-
 ## Blue Noise Stippling Algorithm
 
 The stippling algorithm uses a modified void-and-cluster approach that:
@@ -177,10 +165,6 @@ The stippling algorithm uses a modified void-and-cluster approach that:
 4. Iteratively selects points with minimum energy
 5. Adds Gaussian "splats" around selected points to prevent clustering
 6. Balances image content importance with blue noise spatial distribution
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: stippling-functions-r
@@ -322,15 +306,9 @@ void_and_cluster <- function(input_img,
 }
 ```
 
-:::
-
 ## Preparing the Working Image
 
 Before generating the stippling pattern, we prepare the image by resizing if necessary and computing the importance map.
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: prep-image-r
@@ -365,15 +343,9 @@ importance_map <- compute_importance(img_matrix)
 cat("Importance map computed\n")
 ```
 
-:::
-
 ## Generating the Stippled Image
 
 Now let's apply the stippling algorithm to create the blue noise stippling pattern.
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: generate-stipple-r
@@ -399,15 +371,9 @@ cat("Generated", nrow(samples), "stipple points\n")
 cat("Stipple pattern shape:", nrow(stipple_pattern), "x", ncol(stipple_pattern), "\n")
 ```
 
-:::
-
 ## Displaying the Results
 
 Let's visualize the original image, the importance map, and the stippled version side by side for comparison.
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: display-results-r
@@ -430,15 +396,9 @@ plot(as.cimg(t(stipple_pattern), x = ncol(stipple_pattern), y = nrow(stipple_pat
      axes = FALSE, main = "Blue Noise Stippling")
 ```
 
-:::
-
 ## Progressive Stippling Animation
 
 This section creates a GIF showing how the stippled image looks as more points are added sequentially. We'll use the already-computed stippling points to generate frames at increments of 100 points.
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: progressive-stippling-r
@@ -484,13 +444,7 @@ cat("Generated", length(frames), "frames\n")
 cat("Point counts:", paste(point_counts, collapse = ", "), "\n")
 ```
 
-:::
-
 Now let's create the GIF animation:
-
-::: {.panel-tabset}
-
-### R
 
 ```{r}
 #| label: create-gif-r
@@ -528,8 +482,6 @@ cat("GIF saved to:", gif_path, "\n")
 cat("Total frames:", length(frames), "\n")
 cat("Point counts:", paste(point_counts, collapse = ", "), "\n")
 ```
-
-:::
 
 ![Progressive stippling animation showing the sequential build-up of points. Each frame represents an increment of 100 points, demonstrating how the blue noise stippling pattern develops as more points are added.](progressive_stippling.gif)
 

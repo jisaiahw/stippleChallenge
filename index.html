@@ -110,10 +110,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="loading-the-original-image" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-original-image">Loading the Original Image</h2>
 <p>First, let’s load an image that we’ll convert to a blue noise stippling pattern. You can use any image you’d like, but we’ll demonstrate with the provided example.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -127,9 +123,6 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>Image dimensions: 366 x 378 pixels</code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
 </section>
 <section id="importance-mapping" class="level2">
 <h2 class="anchored" data-anchor-id="importance-mapping">Importance Mapping</h2>
@@ -140,14 +133,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Mid-tone boost</strong>: A smooth Gaussian function centered on mid-tones provides a gradual increase in importance for mid-tone regions, ensuring they receive appropriate stippling density</li>
 <li><strong>Selective and effective</strong>: This approach ensures that stipples are distributed appropriately (more dots in dark areas and mid-tones, fewer in extreme dark/light areas) while maintaining good spatial distribution</li>
 </ul>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-
-</div>
-</div>
-</div>
 </section>
 <section id="blue-noise-stippling-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="blue-noise-stippling-algorithm">Blue Noise Stippling Algorithm</h2>
@@ -160,22 +145,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Adds Gaussian “splats” around selected points to prevent clustering</li>
 <li>Balances image content importance with blue noise spatial distribution</li>
 </ol>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-
-</div>
-</div>
-</div>
 </section>
 <section id="preparing-the-working-image" class="level2">
 <h2 class="anchored" data-anchor-id="preparing-the-working-image">Preparing the Working Image</h2>
 <p>Before generating the stippling pattern, we prepare the image by resizing if necessary and computing the importance map.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Final image shape: 378 x 366 </code></pre>
@@ -184,17 +157,10 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>Importance map computed</code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
 </section>
 <section id="generating-the-stippled-image" class="level2">
 <h2 class="anchored" data-anchor-id="generating-the-stippled-image">Generating the Stippled Image</h2>
 <p>Now let’s apply the stippling algorithm to create the blue noise stippling pattern.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Generating blue noise stippling pattern...</code></pre>
@@ -206,17 +172,10 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>Stipple pattern shape: 378 x 366 </code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
 </section>
 <section id="displaying-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="displaying-the-results">Displaying the Results</h2>
 <p>Let’s visualize the original image, the importance map, and the stippled version side by side for comparison.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -227,17 +186,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
 </section>
 <section id="progressive-stippling-animation" class="level2">
 <h2 class="anchored" data-anchor-id="progressive-stippling-animation">Progressive Stippling Animation</h2>
 <p>This section creates a GIF showing how the stippled image looks as more points are added sequentially. We’ll use the already-computed stippling points to generate frames at increments of 100 points.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Using existing stippling with 11067 points</code></pre>
@@ -252,18 +204,7 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>Point counts: 1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800, 3900, 4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400, 5500, 5600, 5700, 5800, 5900, 6000, 6100, 6200, 6300, 6400, 6500, 6600, 6700, 6800, 6900, 7000, 7100, 7200, 7300, 7400, 7500, 7600, 7700, 7800, 7900, 8000, 8100, 8200, 8300, 8400, 8500, 8600, 8700, 8800, 8900, 9000, 9100, 9200, 9300, 9400, 9500, 9600, 9700, 9800, 9900, 10000, 10100, 10200, 10300, 10400, 10500, 10600, 10700, 10800, 10900, 11000, 11067 </code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
 <p>Now let’s create the GIF animation:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
-
-</div>
-</div>
-</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="progressive_stippling.gif" class="img-fluid figure-img"></p>
