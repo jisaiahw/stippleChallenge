@@ -369,6 +369,10 @@ samples <- stipple_result$samples
 
 cat("Generated", nrow(samples), "stipple points\n")
 cat("Stipple pattern shape:", nrow(stipple_pattern), "x", ncol(stipple_pattern), "\n")
+
+# Save stippled image for use in Part 2 (statsMemeChallenge)
+saveRDS(stipple_pattern, 'stippleImage.rds')
+cat("Saved stippled image to 'stippleImage.rds' for use in Part 2\n")
 ```
 
 ## Displaying the Results
